@@ -18,7 +18,7 @@ docker compose run --rm app sh -c "python manage.py wait_for_db && flake8"
 # Make migrations
 Automatically generetes migration file based on your model class or apply changes to existing migration files.
 
-python manage.py makemigrations
+docker compose run --rm app sh -c "python manage.py makemigrations"
 
 # Apply migrations
 When you are ready to migrate your database to a different type of database
@@ -26,3 +26,8 @@ When you are ready to migrate your database to a different type of database
 python manage.py migrate
 
 Run it after waiting for database
+
+
+# Admin user
+email: admin@example.com
+pass: test123
